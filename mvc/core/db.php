@@ -6,7 +6,7 @@ class db{
     protected $servername = "localhost";
     protected $username = "root";
     protected $password = "bao7122001";
-    protected $dbname = "php_youtube";
+    protected $dbname = "ass_ltw";
 
     function __construct(){
         $this->connect = mysqli_connect($this->servername, $this->username, $this->password);

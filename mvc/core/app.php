@@ -4,7 +4,7 @@ use function PHPSTORM_META\type;
 
 class app{
 
-    protected $controller="Home";
+    protected $controller="HomeController";
     protected $action="viewHome";
     protected $params=[];
 
