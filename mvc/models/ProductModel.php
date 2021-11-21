@@ -4,13 +4,21 @@ class ProductModel extends db{
     {
         return mysqli_query($this->connect, $sql);
     }
-    public function ShowAllProducts(){
-        $sql = "SELECT * FROM products";
+    
+    public function getProductsFeature(){
+        $sql = "SELECT * FROM products WHERE feature_prod = 1";
         $query = $this->_query($sql);
-        // var_dump($query);
         $data = [];
         while ($row = mysqli_fetch_assoc($query)) {
-            // var_dump($row);
+            array_push($data, $row);
+        }
+        return $data;
+    }
+    public function getProductsNew(){
+        $sql = "SELECT * FROM products WHERE new_prod = 1";
+        $query = $this->_query($sql);
+        $data = [];
+        while ($row = mysqli_fetch_assoc($query)) {
             array_push($data, $row);
         }
         return $data;

@@ -1,17 +1,10 @@
 
 <?php
 require_once "./mvc/core/basehref.php";
-class Cart extends controller{
+class CartController extends controller{
 
     function viewHome(){
-        $productsInCart = $_SESSION['cart']; 
-        // echo '<pre>';
-        // print_r($productsInCart);
-        // foreach ($productsInCart as $product){
-        //     print_r($product);
-            
-        // }
-        // die;
+        $productsInCart = $_SESSION['cart'] ?? []; 
         $this->view("cart", [
             'productsInCart' => $productsInCart
         ]);
@@ -26,15 +19,29 @@ class Cart extends controller{
             $product['qty'] = $_SESSION['cart'][$productId]['qty'] + 1;
             $_SESSION['cart'][$productId] = $product;
         }
-        header('Location: ' . getUrl() .'/Cart/viewHome');
+        header('Location: ' . getUrl() .'/CartController/viewHome');
+    }
+    function changeQtyAjax(){
+        if(isset($_POST['id'])){
+            $prodId = $_POST['id'];
+            $_SESSION['cart'][$prodId]['qty'] = $_POST['qty'];
+            echo $_POST['qty'];
+        }
+    }
+    function updateCartAjax(){
+        if(isset($_POST['id'])){
+            $prodId = $_POST['id'];
+            $_SESSION['cart'][$prodId]['qty'] = $_POST['qty'];
+            echo $_POST['qty'];
+        }
     }
     function deleteInCart($id){
         unset($_SESSION['cart'][$id]);
-        header('Location: ' . getUrl() .'/Cart/viewHome');
+        header('Location: ' . getUrl() .'/CartController/viewHome');
     }
     function deleteAllCart(){
         unset($_SESSION['cart']);
-        header('Location: ' . getUrl() .'/Cart/viewHome');
+        header('Location: ' . getUrl() .'/CartController/viewHome');
     }
 }
 ?>

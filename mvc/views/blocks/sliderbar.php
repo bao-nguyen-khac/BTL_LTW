@@ -8,4 +8,8 @@
         <?php endforeach;
         ?>
     </ul>
+    <div>
+        <img class="__banner_sale" src="./public/img/banner-sale.jfif" alt="banner">
+        <img class="__banner_sale" src="./public/img/banner-sale2.jfif" alt="banner">
+    </div>
 </div>

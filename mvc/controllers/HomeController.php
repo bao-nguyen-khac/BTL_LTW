@@ -7,11 +7,13 @@ class HomeController extends controller{
         $this->CategoryModel = $this->model("CategoryModel");
     }
     function viewHome(){
-        $products = $this->model("ProductModel");
+        $feature_products = $this->model("ProductModel")->getProductsFeature();
+        $new_products = $this->model("ProductModel")->getProductsNew();
         $this->view("home", [
             "Page"=>"products",
             "categories" => $this->CategoryModel->showAllCategories(),
-            "products" => $products->showAllProducts()
+            "feature_products" => $feature_products,
+            "new_products" => $new_products
         ]);
     }
     function viewCategory($id){
@@ -24,11 +26,11 @@ class HomeController extends controller{
         ]);
     }
     function viewDetailProductById($id){
-        $products = $this->model("ProductModel");
+        $product = $this->model("ProductModel");
         $this->view("home", [
             "Page"=>"detailproduct",
             "categories" => $this->CategoryModel->showAllCategories(),
-            "products" => $products->getProductById($id),
+            "product" => $product->getProductById($id),
         ]);
     }
 }

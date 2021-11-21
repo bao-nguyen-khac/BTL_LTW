@@ -1,0 +1,19 @@
+.__img_prod{
+    height: 115px;
+}
+.__title_prod{
+    height: 46px;
+}
+.images_1_of_4 .button{
+    width: 100%;
+}
+.__banner_sale{
+    width: 100%;
+    margin-top: 20px;
+}
+.__cart-table{
+    width: 100%;
+}
+#toTop{
+    background: url(../img/arrow_up.png) no-repeat right top;
+}
