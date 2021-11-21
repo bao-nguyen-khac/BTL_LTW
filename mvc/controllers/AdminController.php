@@ -1,12 +1,12 @@
 <?php
 
-class Admin extends controller{
+class AdminController extends controller{
    
     public function viewHome(){
         $order_detail = $this->model("OrderDetailModel");
-        $this->view("adminview",[
-            'page' => 'list_order',
-            'order_detail' => $order_detail->getAllOrder()
+        $this->view("admin/adminview",[
+            // 'page' => 'list_order',
+            // 'order_detail' => $order_detail->getAllOrder()
         ]);
     }
     public function login(){

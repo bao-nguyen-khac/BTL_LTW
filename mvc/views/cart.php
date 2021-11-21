@@ -16,11 +16,11 @@ $home_url = getUrl() . '/';
 	<link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="./public/css/style.css?v=1" rel="stylesheet" type="text/css" media="all" />
     <link href="./public/css/style2.css?v=1" rel="stylesheet" type="text/css" media="all" />
-    <!-- <link href="./public/css/menu.css" rel="stylesheet" type="text/css" media="all" /> -->
 </head>
 
 <body>
