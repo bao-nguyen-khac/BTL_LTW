@@ -1,27 +1,40 @@
-<table class="admin-table">
-        <tr>
-            <td>No.</td>
-            <td>Time</td>
-            <td>Products name</td>
-            <td>Total Price</td>
-            <td>Customer ID</td>
-            <td>Customer</td>
-            <td>Action</td>
-        </tr>
-            <?php $count = 1; foreach ($order_detail as $order): ?>
-            <tr>
-                <td><?= $count ?></td>
-                <td><?= $order['date_order'];?></td>
-                <td><?php 
-                    foreach($order['products'] as $product){
-                        echo $product['qty'].' x '.$product['product_name'];
-                        echo '<br>';
-                    }
-                ?></td>
-                <td><?= $order['totalprice']; ?> VND</td>
-                <td><?= $order['customer_id']; ?> </td>
-                <td><a href="./Admin/viewCustomer/<?= $order['customer_id'] ?>">View customer</a></td>
-                <td><a class="admin-action" href="#"><?=$order['status'];?></a></td>
-            </tr>
-            <?php $count++; endforeach; ?>
-    </table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./public/js/loadOrders.js"></script>
+<div class="temp"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalAction" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Change status</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to change status this order?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a class="admin-action" href=""><button type="button" class="btn btn-primary">Change</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalHide" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Hide order</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to hide this order?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a class="admin-hide" ><button type="button" class="btn btn-primary">Hide</button></a>
+      </div>
+    </div>
+  </div>
+</div>

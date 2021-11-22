@@ -11,6 +11,9 @@ class app{
     function __construct(){
  
         $arr = $this->UrlProcess();
+        if($arr[0] == 'admin'){
+            $this->controller = "AdminController";
+        }
         // Controller
         if( file_exists("./mvc/controllers/".$arr[0].".php") ){
             $this->controller = $arr[0];

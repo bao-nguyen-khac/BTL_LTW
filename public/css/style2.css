@@ -46,3 +46,28 @@
 .__adminnav a:hover{
     background-color: #103D5F;
 }
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px !important;
+    }
+}
+#admin{
+    background: url(../img/body_bg3.jpg);
+}
+.__sidebar-admin{
+    background-color: #D1DEE4;
+    min-height: 500px;
+}
+.admin-table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.admin-table td{
+    border: 1px solid #000;
+    padding: 5px 0;
+}
+.__content{
+    padding: 10px;
+}

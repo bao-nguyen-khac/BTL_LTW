@@ -20,7 +20,7 @@ class OrderDetailModel extends db{
         }
     }
     public function getAllOrder(){
-        $allOrdersql = "SELECT * FROM orderdetail ORDER BY order_id DESC";
+        $allOrdersql = "SELECT * FROM orderdetail WHERE hide = 0 ORDER BY order_id ASC";
         $query1 = $this->_query($allOrdersql);
         $allOrders = [];
         while ($row = mysqli_fetch_assoc($query1)) {
@@ -57,5 +57,22 @@ class OrderDetailModel extends db{
         }
         return $data;
     }
+    public function changeAction($order_id){
+        $sql = "SELECT `status` FROM orderdetail WHERE order_id = $order_id";
+        $query = $this->_query($sql);
+        $data = [];
+        while ($row = mysqli_fetch_assoc($query)) {
+            array_push($data, $row);
+        }
+        if($data[0]['status'] == 0 || $data[0]['status'] == 1){
+            $data[0]['status']++;
+            $updatesql = "UPDATE orderdetail SET `status` = '".$data[0]['status']."' WHERE order_id = $order_id";
+            $this->_query($updatesql);
+        }
+    }
+    public function hideOrder($order_id){
+        $sql = "UPDATE orderdetail SET `hide` = 1 WHERE order_id = $order_id";
+        $this->_query($sql);
+    }    
 }
 ?>

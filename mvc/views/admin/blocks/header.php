@@ -10,7 +10,7 @@
 <nav class="navbar sticky-top navbar-dark bg-dark __nav-admin">
   <div class="container-fluid __adminnav">
     <a class="navbar-brand none" href="#"></a>
-    <a class="navbar-brand" href="#">Dashboard</a>
+    <a class="navbar-brand" href="./AdminController/viewHome">Dashboard</a>
     <a class="navbar-brand" href="#">User Profie</a>
     <a class="navbar-brand" href="#">Change Pasword</a>
     <a class="navbar-brand" href="#">Visit Website</a>
