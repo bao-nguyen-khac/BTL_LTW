@@ -15,7 +15,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a class="admin-action" href=""><button type="button" class="btn btn-primary">Change</button></a>
+        <a class="admin-action"><button type="button" class="btn btn-primary">Change</button></a>
       </div>
     </div>
   </div>

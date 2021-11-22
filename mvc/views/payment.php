@@ -1,5 +1,8 @@
 <?php
 require_once "./mvc/core/basehref.php";
+if (!isset($_SESSION["id_customer"])) {
+    header("Location:" . getUrl() . "/User/login");
+}
 $home_url = getUrl() . '/';
 ?>
 <!DOCTYPE html>
@@ -31,7 +34,7 @@ $home_url = getUrl() . '/';
             <div class="content">
                 <div class="content_top">
                     <div class="back-links">
-                        <p><a href="./HomeController/viewHome">Home</a> >> <a href="./CartController/viewHome">Carts</a></p>
+                        <p><a href="./HomeController/viewHome">Home</a> >> <a href="./CartController/viewHome">Payment</a></p>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -46,7 +49,7 @@ $home_url = getUrl() . '/';
                                 <th style="width:10%"></th>
                             </tr>
                         </thead>
-                        <?php $count = 1;
+                        <?php
                         $sum = 0;
                         foreach ($productsInCart as $product) :
                             if (!is_array($product)) {
@@ -66,40 +69,27 @@ $home_url = getUrl() . '/';
                                     </td>
                                     <td data-th="Price"><?= number_format($product['price']); ?>đ</td>
                                     <td data-th="Quantity">
-                                        <input type="number" class="form-control text-center cart-qty" data-prodid="<?= $product['id'] ?>" value="<?= $product['qty']; ?>">
+                                        x <?= $product['qty']; ?>
                                     </td>
                                     <td data-th="Subtotal" class="text-center SubtotalCart" data-subtotal="<?= $product['id'] ?>"><?= number_format($product['price'] * $product['qty']); ?>đ</td>
-                                    <td class="actions" data-th="">
-                                        <a href="./CartController/viewHome"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
-                                        <a href="./CartController/deleteInCart/<?= $product['id'] ?>"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>
-                                    </td>
                                 </tr>
                             </tbody>
-                        <?php $count++;
-                        endforeach; ?>
+                        <?php
+                        endforeach; $_SESSION['cart']['totalprice'] = $sum?>
                         <tfoot>
                             <tr>
-                                <td><a href="./HomeController/viewHome" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue
-                                        Shopping</a></td>
+                                <td><a href="./CartController/viewHome" class="btn btn-warning"><i class="fa fa-angle-left"></i> Back to cart</a></td>
                                 <td colspan="2" class="hidden-xs"></td>
                                 <td class="hidden-xs text-center"><strong>Total <?= number_format($sum) ?>đ</strong></td>
-                                <?php if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) : ?>
-                                    <td><button class="btn btn-success btn-block" onclick="alert('Cart is empty can not check out!')">Checkout <i class="fa fa-angle-right"></i></button></td>
-                                <?php else : ?>
-                                    <td><a href="./PaymentController/viewHome" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
-                                <?php endif; ?>
+                                <td><a href="./PaymentController/recordOrder" class="btn btn-success btn-block">Payment <i class="fa fa-angle-right"></i></a></td>
                             </tr>
                         </tfoot>
-
                     </table>
                 </div>
             </div>
-            
         </div>
     </div>
-
-    <a href="./CartController/viewHome" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+    <a id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
 </body>
-<script src="./public/js/main.js?v=1"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </html>

@@ -6,7 +6,7 @@ class OrderDetailModel extends db{
         return mysqli_query($this->connect, $sql);
     }
     public function recordOrder($order,$customer_id){
-        $insert_order = "INSERT INTO orderdetail(customer_id,date_order,totalprice,`status`) VALUE ('" . $customer_id . "',NOW(),". $order['totalprice'] .",'Đang chờ xử lý'); ";
+        $insert_order = "INSERT INTO orderdetail(customer_id,date_order,totalprice,`status`,hide) VALUE ('" . $customer_id . "',NOW(),". $order['totalprice'] .",0,0); ";
         $this->_query($insert_order);
         $getLastIdsql = "SELECT order_id FROM orderdetail ORDER BY order_id DESC LIMIT 1";
         $getLastId = $this->_query($getLastIdsql);

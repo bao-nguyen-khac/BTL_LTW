@@ -33,7 +33,7 @@
                 <td> '.number_format($order['totalprice']) .'đ</td>
                 
                 <td><a href="./AdminController/viewCustomer/'.$order['customer_id'] .'">View customer</a></td>
-                <td><button type="button" class="btn btn-primary __btn-status" data-order_id="'.$order['order_id'].'" data-bs-toggle="modal" data-bs-target="#modalAction">'.$status.'</button></td>
+                <td><button type="button" class="btn btn-primary __btn-status" data-order_id="'.$order['order_id'].'" data-status="'.$order['status'].'" data-bs-toggle="modal" data-bs-target="#modalAction">'.$status.'</button></td>
                 <td><button type="button" class="btn-close __btn-hide"  data-order_id="'.$order['order_id'].'" data-status="'.$order['status'].'" data-bs-toggle="modal" data-bs-target="#modalHide"></button></td>
             </tr>';
         $count++;
