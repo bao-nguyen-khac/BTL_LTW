@@ -5,29 +5,68 @@ class ProductModel extends db{
         return mysqli_query($this->connect, $sql);
     }
     
-    public function getProductsFeature(){
-        $sql = "SELECT * FROM products WHERE feature_prod = 1";
-        $query = $this->_query($sql);
+    public function getProductsFeature($page,$qty,&$checkNext){
+        if($page == 0){
+            $sql = "SELECT * FROM products WHERE feature_prod = 1 LIMIT 0,$qty";
+            $query = $this->_query($sql);
+            $data = [];
+            while ($row = mysqli_fetch_assoc($query)) {
+                array_push($data, $row);
+            }
+            return $data;
+        }
+        $start = $page*$qty - $qty;
+        $sql1 = "SELECT * FROM products WHERE feature_prod = 1 LIMIT $start, $qty";
+        $query1 = $this->_query($sql1);
         $data = [];
-        while ($row = mysqli_fetch_assoc($query)) {
+        $start += $qty;
+        $sql2 = "SELECT * FROM products WHERE feature_prod = 1 LIMIT $start, $qty";
+        $query2 = $this->_query($sql2);
+        if(mysqli_num_rows($query2) == 0){
+            $checkNext = 0;
+        }
+        while ($row = mysqli_fetch_assoc($query1)) {
             array_push($data, $row);
         }
         return $data;
     }
-    public function getProductsNew(){
-        $sql = "SELECT * FROM products WHERE new_prod = 1";
-        $query = $this->_query($sql);
+    public function getProductsNew($page,$qty,&$checkNext){
+        if($page == 0){
+            $sql = "SELECT * FROM products WHERE new_prod = 1 LIMIT 0,$qty";
+            $query = $this->_query($sql);
+            $data = [];
+            while ($row = mysqli_fetch_assoc($query)) {
+                array_push($data, $row);
+            }
+            return $data;
+        }
+        $start = $page*$qty - $qty;
+        $sql1 = "SELECT * FROM products WHERE new_prod = 1 LIMIT $start, $qty";
+        $query1 = $this->_query($sql1);
         $data = [];
-        while ($row = mysqli_fetch_assoc($query)) {
+        $start += $qty;
+        $sql2 = "SELECT * FROM products WHERE new_prod = 1 LIMIT $start, $qty";
+        $query2 = $this->_query($sql2);
+        if(mysqli_num_rows($query2) == 0){
+            $checkNext = 0;
+        }
+        while ($row = mysqli_fetch_assoc($query1)) {
             array_push($data, $row);
         }
         return $data;
     }
-    public function showProductsById($id){
-        $sql = "SELECT * FROM products WHERE category_id = '$id'";
-        $query = $this->_query($sql);
+    public function showProductsById($id,$page,$qty,&$checkNext){
+        $start = $page*$qty - $qty;
+        $sql1 = "SELECT * FROM products WHERE category_id = '$id' LIMIT $start, $qty";
+        $query1 = $this->_query($sql1);
         $data = [];
-        while ($row = mysqli_fetch_assoc($query)) {
+        $start += $qty;
+        $sql2 = "SELECT * FROM products WHERE category_id = '$id' LIMIT $start, $qty";
+        $query2 = $this->_query($sql2);
+        if(mysqli_num_rows($query2) == 0){
+            $checkNext = 0;
+        }
+        while ($row = mysqli_fetch_assoc($query1)) {
             array_push($data, $row);
         }
         return $data;

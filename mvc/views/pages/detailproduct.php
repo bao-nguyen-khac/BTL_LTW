@@ -11,10 +11,10 @@
         <div class="share">
             <p>Share Product :</p>
             <ul>
-                <li><a href="#"><img src="./public/img/youtube.png" alt=""></a></li>
-                <li><a href="#"><img src="./public/img/facebook.png" alt=""></a></li>
-                <li><a href="#"><img src="./public/img/twitter.png" alt=""></a></li>
-                <li><a href="#"><img src="./public/img/linkedin.png" alt=""></a></li>
+                <li><a><img src="./public/img/youtube.png" alt=""></a></li>
+                <li><a><img src="./public/img/facebook.png" alt=""></a></li>
+                <li><a><img src="./public/img/twitter.png" alt=""></a></li>
+                <li><a><img src="./public/img/linkedin.png" alt=""></a></li>
             </ul>
         </div>
         <div class="add-cart">
@@ -28,7 +28,7 @@
     <div class="product-desc">
         <h2>Product Details</h2>
         <?php foreach(explode("/",$product['sub_desc']) as $each): ?>
-            <p><?=$each ?></p> <br>
+            <p><?=$each ?></p>
         <?php endforeach;?>
     </div>
     <div class="product-tags">

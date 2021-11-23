@@ -35,14 +35,19 @@ $home_url = getUrl() . '/';
                 <?php require_once "./mvc/views/admin/blocks/slider.php"; ?>
             </div>
             <div class="col-9">
-                <div class="__content">
-                    <?php if($page == 'home'): ?>
+                <div class="__content-admin">
+                    <?php if ($page == 'home') : ?>
                         <h3>Dashboard</h3>
                         <p>Welcome admin page</p>
-                    <?php else: ?>
-                        <?php require_once "./mvc/views/admin/pages/".$data["page"].".php";?> 
+                    <?php else : ?>
+                        <?php require_once "./mvc/views/admin/pages/" . $data["page"] . ".php"; ?>
                     <?php endif; ?>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3>Footer</h3>
             </div>
         </div>
     </div>
