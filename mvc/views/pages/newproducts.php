@@ -1,18 +1,13 @@
 <div class="cont-desc span_1_of_2">
     <div class="content_top">
         <div class="heading">
-            <h3><?php foreach ($categories as $category) {
-                    if ($category['id'] == $id) {
-                        echo $category['name'];
-                    }
-                } ?></h3>
+            <h3>New Products</h3>
         </div>
         <div class="page-no">
 
         </div>
         <div class="clear"></div>
     </div>
-    <div class="list-products">
     <?php $count = -1;
     foreach ($products as $product) :
         $count++;
@@ -33,7 +28,7 @@
             echo '</div>';
         }
     ?>
-    </div>
+
     <div class="select-page">
         <?php if ($page > 1) : ?>
             <div class="pre-page">
