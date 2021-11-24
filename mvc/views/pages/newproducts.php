@@ -8,6 +8,7 @@
         </div>
         <div class="clear"></div>
     </div>
+    <div class="list-products">
     <?php $count = -1;
     foreach ($products as $product) :
         $count++;
@@ -28,7 +29,7 @@
             echo '</div>';
         }
     ?>
-
+    </div>
     <div class="select-page">
         <?php if ($page > 1) : ?>
             <div class="pre-page">

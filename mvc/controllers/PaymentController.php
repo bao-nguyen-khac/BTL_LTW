@@ -20,15 +20,19 @@ class PaymentController extends controller{
     }
     public function checkLogin(){
         if (!isset($_SESSION["id_customer"])) {
-            header("Location:".getUrl()."/User/login");
+            header("Location:".getUrl()."/UserController/login");
         }else{
             header("Location:".getUrl()."/PaymentController/viewStatusOldOrder/".$_SESSION["id_customer"]);
         }
     }
-    public function viewStatusOldOrder($customer_id){
-        $order_detail = $this->model("OrderDetailModel");
+    public function viewStatusOldOrder($customer_id,$page = 1){
+        $qty = 7;
+        $checkNext = 1;
+        $order_detail = $this->model("OrderDetailModel")->getOrderByCusID($customer_id,$page,$qty,$checkNext);
         $this->view("viewoldorder",[
-            'order_detail' => $order_detail->getOrderByCusID($customer_id)
+            'order_detail' => $order_detail,
+            "page" => $page,
+            "checkNext" => $checkNext
         ]);
     }
 }

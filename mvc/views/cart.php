@@ -66,7 +66,7 @@ $home_url = getUrl() . '/';
                                     </td>
                                     <td data-th="Price"><?= number_format($product['price']); ?>đ</td>
                                     <td data-th="Quantity">
-                                        <input type="number" class="form-control text-center cart-qty" data-prodid="<?= $product['id'] ?>" value="<?= $product['qty']; ?>">
+                                        <input type="number" class="form-control text-center cart-qty" data-prodid="<?= $product['id'] ?>" value="<?= $product['qty']; ?>" min="1">
                                     </td>
                                     <td data-th="Subtotal" class="text-center SubtotalCart" data-subtotal="<?= $product['id'] ?>"><?= number_format($product['price'] * $product['qty']); ?>đ</td>
                                     <td class="actions" data-th="">

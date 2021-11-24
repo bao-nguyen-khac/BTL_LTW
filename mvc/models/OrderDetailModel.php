@@ -38,14 +38,21 @@ class OrderDetailModel extends db{
         }
         return $data;
     }
-    public function getOrderByCusID($customer_id){
-        $getOrdersql = "SELECT * FROM orderdetail WHERE customer_id = ". $customer_id ." ORDER BY order_id DESC";
+    public function getOrderByCusID($customer_id,$page,$qty,&$checkNext){
+        $start = $page*$qty - $qty;
+        $getOrdersql = "SELECT * FROM orderdetail WHERE customer_id = $customer_id ORDER BY order_id DESC LIMIT $start, $qty";
         $query1 = $this->_query($getOrdersql);
         $allOrders = [];
         while ($row = mysqli_fetch_assoc($query1)) {
             array_push($allOrders, $row);
         }
         $data = [];
+        $start += $qty;
+        $sql2 = "SELECT * FROM orderdetail WHERE customer_id = $customer_id ORDER BY order_id DESC LIMIT $start, $qty";
+        $query2 = $this->_query($sql2);
+        if(mysqli_num_rows($query2) == 0){
+            $checkNext = 0;
+        }
         foreach($allOrders as $order){
             $allProductsql = "SELECT product_id, product_name, qty FROM list_product_in_order WHERE order_id = ". $order['order_id'];
             $order['products'] = [];

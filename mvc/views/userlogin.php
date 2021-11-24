@@ -14,7 +14,7 @@ if (count($_POST) > 0) {
     }
 }
 if (isset($_SESSION["id_customer"])) {
-	header("Location:".getUrl()."/Orderpay/viewHome");
+	header("Location:".getUrl()."/".$turnBack."/viewHome");
 }
 ?>
 <!DOCTYPE html>

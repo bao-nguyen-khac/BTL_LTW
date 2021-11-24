@@ -1,14 +1,45 @@
+.cart a:hover span{
+    color: #0096d9;
+}
+.nav-top-brand a:hover{
+    color: #0096d9 !important;
+}
+.login img{
+    margin-top: 8px;
+    padding-top: 0px !important;
+}
+.login:hover img{
+    margin-top: 4px;
+}
+.name-user,.logout{
+    line-height: 38px;
+
+    float: left;
+    margin-left: 15px;
+}
+.logout{
+    margin-left: 30px;
+}
+.logout:hover a{
+    color: #0096d9 !important;
+}
 .__img_prod{
     height: 115px;
     border-radius: 6px;
+    margin-top: 8px;
 }
 .grid_1_of_4:hover{
     box-shadow: 0px 0px 14px rgb(150 150 150);
 }
+.grid_1_of_4:hover .__img_prod{
+    margin-top: 0px;
+}
 .images_3_of_2{
+    margin-top: 10px;
     box-shadow: 0px 0px 1px rgb(150 150 150);
 }
 .images_3_of_2:hover{
+    margin-top: 0px;
     box-shadow: 0px 0px 6px rgb(150 150 150);
 }
 .list-products{
@@ -23,6 +54,9 @@
 .__banner_sale{
     width: 100%;
     margin-top: 20px;
+}
+.__banner_sale:hover{
+    box-shadow: 0px 0px 20px rgb(150 150 150);
 }
 .__cart-table{
     width: 100%;
@@ -53,6 +87,34 @@
 }
 .span_3_of_2 p{
     color: #000;
+}
+.customer-table{
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border: 1px solid #dee2e6;
+    background-color: transparent;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.customer-table thead th{
+    border-bottom: 2px solid #dee2e6;
+    border-left-width: 0;
+    border-right: 1px solid #dee2e6;
+    border-bottom-width: 2px;
+    padding: 12px;
+    font-weight: 600;
+}
+.customer-table tbody td{
+    border: 1px solid #dee2e6;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    padding: 0.75rem;
+    vertical-align: top;
+}
+.customer-table tbody tr:hover{
+    color: #212529;
+    background-color: rgba(0,0,0,.075);
 }
 #toTop{
     background: url(../img/arrow_up.png) no-repeat right top;

@@ -1,8 +1,10 @@
 <?php
 
-class User extends controller{
-    public function login(){
-        $this->view("userlogin");
+class UserController extends controller{
+    public function login($turnBack = 'HomeController'){
+        $this->view("userlogin",[
+            'turnBack' => $turnBack
+        ]);
     }
     public function logout(){
         $this->view("userlogout");

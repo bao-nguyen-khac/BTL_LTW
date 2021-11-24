@@ -1,7 +1,7 @@
 <?php
 require_once "./mvc/core/basehref.php";
 if (!isset($_SESSION["id_customer"])) {
-    header("Location:" . getUrl() . "/User/login");
+    header("Location:" . getUrl() . "/UserController/login/PaymentController");
 }
 $home_url = getUrl() . '/';
 ?>
@@ -34,7 +34,7 @@ $home_url = getUrl() . '/';
             <div class="content">
                 <div class="content_top">
                     <div class="back-links">
-                        <p><a href="./HomeController/viewHome">Home</a> >> <a href="./CartController/viewHome">Payment</a></p>
+                        <p><a href="./HomeController/viewHome">Home</a> >> <a href="./PaymentController/viewHome">Payment</a></p>
                     </div>
                     <div class="clear"></div>
                 </div>
