@@ -20,7 +20,7 @@ $home_url = getUrl() . '/';
     <title>Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./public/css/style2.css?v=3">
+    <link rel="stylesheet" href="./public/css/admin.css">
 </head>
 
 <body id="admin">
@@ -31,10 +31,10 @@ $home_url = getUrl() . '/';
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 left-col">
                 <?php require_once "./mvc/views/admin/blocks/slider.php"; ?>
             </div>
-            <div class="col-9">
+            <div class="col-9 right-col">
                 <div class="__content-admin">
                     <?php if ($page == 'home') : ?>
                         <h3>Dashboard</h3>

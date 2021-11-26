@@ -1,16 +1,19 @@
 <?php
     $output = '
         <h3>List orders</h3>
+        <div class="table-contain" >
         <table class="admin-table">
-            <tr>
-                <td>Order ID</td>
-                <td>Order Time</td>
-                <td>Products</td>
-                <td>Total Price</td>
-                <td>Customer</td>
-                <td>Status</td>
-                <td>Hide</td>
-            </tr>';
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Order Time</th>
+                    <th>Products</th>
+                    <th>Total Price</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Hide</th>
+                </tr>
+            </thead>';
     $count = 1;
     foreach ($order_detail as $order) {
         $status = '';
@@ -32,12 +35,28 @@
         $output .= '</td>
                 <td> '.number_format($order['totalprice']) .'đ</td>
                 
-                <td><a href="./AdminController/viewCustomer/'.$order['customer_id'] .'">View customer</a></td>
+                <td><a class="view-detail-cus" href="./AdminController/viewCustomer/'.$order['customer_id'] .'">Details</a></td>
                 <td><button type="button" class="btn btn-primary __btn-status" data-order_id="'.$order['order_id'].'" data-status="'.$order['status'].'" data-bs-toggle="modal" data-bs-target="#modalAction">'.$status.'</button></td>
                 <td><button type="button" class="btn-close __btn-hide"  data-order_id="'.$order['order_id'].'" data-status="'.$order['status'].'" data-bs-toggle="modal" data-bs-target="#modalHide"></button></td>
             </tr>';
         $count++;
     }
-    $output .= '</table>';
+    $output .= '</table></div>';
+    $output .= 
+        '<div class="select-page">';
+        if ($page > 1){
+            $output .= 
+            '<div class="pre-page">
+                <button type="button" class="btn btn-primary btn-prev" data-page='.$page.'><< Prev</button>
+            </div>';
+        }
+        if ($checkNext == 1){
+            $output .= 
+            '<div class="next-page">
+                <button type="button" class="btn btn-primary btn-next" data-page='.$page.'>Next >></button>
+            </div>
+            <div class="clear"></div>
+        </div>';
+        }
     echo $output;
 ?>

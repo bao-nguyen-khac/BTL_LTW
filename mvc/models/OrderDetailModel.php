@@ -19,9 +19,16 @@ class OrderDetailModel extends db{
             $this->_query($inser_product);
         }
     }
-    public function getAllOrder(){
-        $allOrdersql = "SELECT * FROM orderdetail WHERE hide = 0 ORDER BY order_id ASC";
+    public function getAllOrder($page,$qty,&$checkNext){
+        $start = $page*$qty - $qty;
+        $allOrdersql = "SELECT * FROM orderdetail WHERE hide = 0 LIMIT $start, $qty";
         $query1 = $this->_query($allOrdersql);
+        $start += $qty;
+        $sql2 = "SELECT * FROM orderdetail WHERE hide = 0 LIMIT $start, 1";
+        $qry = $this->_query($sql2);
+        if(mysqli_num_rows($qry) == 0){
+            $checkNext = 0;
+        }
         $allOrders = [];
         while ($row = mysqli_fetch_assoc($query1)) {
             array_push($allOrders, $row);

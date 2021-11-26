@@ -5,7 +5,8 @@ class CartController extends controller{
 
     function viewHome(){
         $productsInCart = $_SESSION['cart'] ?? []; 
-        $this->view("cart", [
+        $this->view("customer/cart-payment", [
+            "Page" => "cart",
             'productsInCart' => $productsInCart
         ]);
     }

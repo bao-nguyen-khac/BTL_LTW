@@ -1,7 +1,11 @@
 <div class="cont-desc span_1_of_2">
     <div class="content_top">
         <div class="heading">
-            <h3>Feature Products</h3>
+            <h3><?php foreach ($categories as $category) {
+                    if ($category['id'] == $id) {
+                        echo $category['name'];
+                    }
+                } ?></h3>
         </div>
         <div class="page-no">
 
@@ -33,13 +37,13 @@
     <div class="select-page">
         <?php if ($page > 1) : ?>
             <div class="pre-page">
-                <a href="./HomeController/featureProducts/<?= --$page ?>">
+                <a href="./HomeController/viewCategory/<?= $id ?>/<?= $page - 1 ?>">
                     << Prev </a>
             </div>
         <?php endif; ?>
         <?php if ($checkNext == 1) : ?>
             <div class="next-page">
-                <a href="./HomeController/featureProducts/<?= ++$page ?>"> Next >></a>
+                <a href="./HomeController/viewCategory/<?= $id ?>/<?= $page + 1 ?>"> Next >></a>
             </div>
         <?php endif; ?>
 

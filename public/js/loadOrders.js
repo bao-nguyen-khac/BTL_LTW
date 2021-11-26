@@ -1,7 +1,9 @@
 $(document).ready(function () {
+    var page = 1
     function fetchData() {
+        console.log(page)
         $.ajax({
-            url: "./AdminController/ordersListAjax",
+            url: "./AdminController/ordersListAjax/" + page,
             success: function (data) {
                 $('.temp').html(data);
             }
@@ -27,4 +29,24 @@ $(document).ready(function () {
         }
         
     })
+    $(document).on('click','.btn-prev',function(){
+        page = $(this).data('page') - 1
+        $.ajax({
+            url: "./AdminController/ordersListAjax/" + page,
+            success: function (data) {
+                $('.temp').html(data);
+            }
+        })
+    })
+    $(document).on('click','.btn-next',function(){
+        page = $(this).data('page') + 1
+        $.ajax({
+            url: "./AdminController/ordersListAjax/" + page,
+            success: function (data) {
+                $('.temp').html(data);
+            }
+        })
+    })
+    
+
 })

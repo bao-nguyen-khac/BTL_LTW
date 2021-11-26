@@ -22,7 +22,7 @@ $home_url = getUrl() . '/';
 
 <body>
     <div class="wrap">
-        <?php require_once "./mvc/views/blocks/header.php"; ?>
+        <?php require_once "./mvc/views/customer/blocks/header.php"; ?>
         
         <div class="main">
             <div class="content">
@@ -42,13 +42,14 @@ $home_url = getUrl() . '/';
                 } ?>
                 <div class="section group">
                     
-                    <?php require_once "./mvc/views/pages/" . $data["Page"] . ".php"; ?>
+                    <?php require_once "./mvc/views/customer/pages/" . $data["Page"] . ".php"; ?>
                     
-                    <?php require_once "./mvc/views/blocks/sliderbar.php"; ?>
+                    <?php require_once "./mvc/views/customer/blocks/sliderbar.php"; ?>
                 </div>
             </div>
         </div>
     </div>
+    <?php require_once "./mvc/views/customer/blocks/footer.php"; ?>
     <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
 </body>
 

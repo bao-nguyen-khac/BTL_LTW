@@ -3,7 +3,8 @@ require_once "./mvc/core/basehref.php";
 class PaymentController extends controller{
     public function viewHome(){
         $productsInCart = $_SESSION['cart'];
-        $this->view("payment", [
+        $this->view("customer/cart-payment", [
+            "Page" => "payment",
             'productsInCart' => $productsInCart
         ]);
     }
@@ -16,7 +17,9 @@ class PaymentController extends controller{
         header('Location: ' . getUrl() .'/PaymentController/afterPayment');
     }
     public function afterPayment(){
-        $this->view("afterpayment");
+        $this->view("customer/cart-payment",[
+            "Page" => "afterpayment",
+        ]);
     }
     public function checkLogin(){
         if (!isset($_SESSION["id_customer"])) {
@@ -29,7 +32,8 @@ class PaymentController extends controller{
         $qty = 7;
         $checkNext = 1;
         $order_detail = $this->model("OrderDetailModel")->getOrderByCusID($customer_id,$page,$qty,$checkNext);
-        $this->view("viewoldorder",[
+        $this->view("customer/cart-payment",[
+            "Page" => "oldorders",
             'order_detail' => $order_detail,
             "page" => $page,
             "checkNext" => $checkNext

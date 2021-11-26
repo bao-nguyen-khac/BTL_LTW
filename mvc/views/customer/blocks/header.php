@@ -47,10 +47,10 @@
                         </div>
                     </ul>
                 </li>
-                <li><a href="">About</a></li>
+                <li><a href="./HomeController/about">About</a></li>
                 <li><a href="">Faqs</a></li>
                 <li><a href="">Delivery</a></li>
-                <li><a href="">CONTACT</a></li>
+                <li><a href="./HomeController/contact">CONTACT</a></li>
                 <li><a href="./PaymentController/checkLogin">View orders placed</a></li>
                 <div class="clear"> </div>
             </ul>

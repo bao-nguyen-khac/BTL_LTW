@@ -21,10 +21,14 @@ class AdminController extends controller{
             'page' => 'list_order',
         ]);
     }
-    public function ordersListAjax(){
-        $order_detail = $this->model("OrderDetailModel")->getAllOrder();
+    public function ordersListAjax($page = 1){
+        $qty = 2;
+        $checkNext = 1;
+        $order_detail = $this->model("OrderDetailModel")->getAllOrder($page,$qty,$checkNext);
         $this->view("admin/pages/list_order_ajax",[
-            'order_detail' => $order_detail
+            "page" => $page,
+            'order_detail' => $order_detail,
+            "checkNext" => $checkNext
         ]);
     }
     public function viewCustomer($customer_id){
@@ -42,5 +46,8 @@ class AdminController extends controller{
         $this->model("OrderDetailModel")->hideOrder($order_id);
         header('Location: ' . getUrl() .'/AdminController/ordersList');
     }
+    // public function getAllProducts(){
+
+    // }
 }
 ?>

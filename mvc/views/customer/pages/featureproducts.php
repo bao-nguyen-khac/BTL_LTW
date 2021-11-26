@@ -1,7 +1,7 @@
 <div class="cont-desc span_1_of_2">
     <div class="content_top">
         <div class="heading">
-            <h3>New Products</h3>
+            <h3>Feature Products</h3>
         </div>
         <div class="page-no">
 
@@ -33,13 +33,13 @@
     <div class="select-page">
         <?php if ($page > 1) : ?>
             <div class="pre-page">
-                <a href="#">
+                <a href="./HomeController/featureProducts/<?= $page - 1 ?>">
                     << Prev </a>
             </div>
         <?php endif; ?>
         <?php if ($checkNext == 1) : ?>
             <div class="next-page">
-                <a href="./HomeController/viewCategory/<?= $id ?>/<?= ++$page ?>"> Next >></a>
+                <a href="./HomeController/featureProducts/<?= $page + 1 ?>"> Next >></a>
             </div>
         <?php endif; ?>
 

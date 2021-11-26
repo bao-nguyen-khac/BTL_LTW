@@ -2,15 +2,18 @@
 
 class UserController extends controller{
     public function login($turnBack = 'HomeController'){
-        $this->view("userlogin",[
+        $this->view("customer/userlogin",[
             'turnBack' => $turnBack
         ]);
     }
     public function logout(){
-        $this->view("userlogout");
+        $this->view("customer/userlogout");
     }
     public function checklogin($username, $password){
         return $this->model("UserModel")->CheckLogin($username, $password);
+    }
+    public function register(){
+        $this->view("customer/userregister");
     }
 }
 ?>

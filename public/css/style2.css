@@ -92,21 +92,21 @@
     width: 100%;
     margin-top: 6px;
     margin-bottom: 6px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #000;
     background-color: transparent;
     border-collapse: separate;
     border-spacing: 0;
 }
 .customer-table thead th{
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid #000;
     border-left-width: 0;
-    border-right: 1px solid #dee2e6;
+    border-right: 1px solid #000;
     border-bottom-width: 2px;
     padding: 12px;
     font-weight: 600;
 }
 .customer-table tbody td{
-    border: 1px solid #dee2e6;
+    border: 1px solid #000;
     border-bottom-width: 0;
     border-left-width: 0;
     padding: 0.75rem;
@@ -118,61 +118,4 @@
 }
 #toTop{
     background: url(../img/arrow_up.png) no-repeat right top;
-}
-.__header-admin{
-    background-color: #204562 !important;
-}
-.__nav-admin{
-    background-color: #315c7c !important;
-    padding: 0 ;
-}
-.bd-aside .btn::before {
-    width: 1.25em;
-    line-height: 0;
-    content: url();
-    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
-    transition: transform .35s ease;
-    transform-origin: 0.5em 50%;
-}
-.bd-aside .btn[aria-expanded="true"]::before {
-    transform: rotate(90deg)
-}
-.__adminnav{
-    justify-content: unset !important;
-}
-.__adminnav a{
-    line-height: 46px;
-    padding: 0 50px;
-    margin-right: 0 !important;
-}
-.__adminnav a:hover{
-    background-color: #103D5F;
-}
-@media (min-width: 1200px) {
-    .container{
-        max-width: 1200px !important;
-    }
-}
-#admin{
-    background: url(../img/body_bg3.jpg);
-}
-.__sidebar-admin{
-    background-color: #D1DEE4;
-    min-height: 500px;
-    margin-bottom: 0 !important;
-}
-.admin-table{
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-}
-.admin-table td{
-    border: 1px solid #000;
-    padding: 5px 0;
-}
-.__content-admin{
-    background-color: #D1DEE4;
-    padding: 10px;
-    min-height: 500px;
 }

@@ -11,7 +11,7 @@ class HomeController extends controller{
         $checkNext = 1;
         $feature_products = $this->model("ProductModel")->getProductsFeature(0,$qty,$checkNext);
         $new_products = $this->model("ProductModel")->getProductsNew(0,$qty,$checkNext);
-        $this->view("home", [
+        $this->view("customer/home", [
             "Page"=>"products",
             "categories" => $this->CategoryModel->showAllCategories(),
             "feature_products" => $feature_products,
@@ -22,7 +22,7 @@ class HomeController extends controller{
         $qty = 8;
         $checkNext = 1;
         $products = $this->model("ProductModel")->showProductsById($id,$page,$qty,$checkNext);
-        $this->view("home", [
+        $this->view("customer/home", [
             "Page"=> "categories",
             "page" => $page,
             "categories" => $this->CategoryModel->showAllCategories(),
@@ -33,7 +33,7 @@ class HomeController extends controller{
     }
     public function viewDetailProductById($id){
         $product = $this->model("ProductModel");
-        $this->view("home", [
+        $this->view("customer/home", [
             "Page"=>"detailproduct",
             "categories" => $this->CategoryModel->showAllCategories(),
             "product" => $product->getProductById($id),
@@ -43,7 +43,7 @@ class HomeController extends controller{
         $qty = 8;
         $checkNext = 1;
         $products = $this->model("ProductModel")->getProductsFeature($page,$qty,$checkNext);
-        $this->view("home", [
+        $this->view("customer/home", [
             "Page"=> "featureproducts",
             "page" => $page,
             "categories" => $this->CategoryModel->showAllCategories(),
@@ -55,12 +55,22 @@ class HomeController extends controller{
         $qty = 8;
         $checkNext = 1;
         $products = $this->model("ProductModel")->getProductsNew($page,$qty,$checkNext);
-        $this->view("home", [
+        $this->view("customer/home", [
             "Page"=> "newproducts",
             "page" => $page,
             "categories" => $this->CategoryModel->showAllCategories(),
             "products" => $products,
             "checkNext" => $checkNext
+        ]);
+    }
+    public function contact(){
+        $this->view("customer/contact-about", [
+            "Page" => "contact"
+        ]);
+    }
+    public function about(){
+        $this->view("customer/contact-about", [
+            "Page" => "about"
         ]);
     }
 }

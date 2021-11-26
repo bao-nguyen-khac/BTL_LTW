@@ -1,0 +1,97 @@
+/*admin */
+@media (min-width: 1200px) {
+    .container{
+        max-width: 100% !important;
+    }
+}
+.__header-admin{
+    background-color: #204562 !important;
+}
+.__nav-admin{
+    background-color: #315c7c !important;
+    padding: 0 ;
+}
+.bd-aside .btn::before {
+    width: 1.25em;
+    line-height: 0;
+    content: url();
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+    transition: transform .35s ease;
+    transform-origin: 0.5em 50%;
+}
+.bd-aside .btn[aria-expanded="true"]::before {
+    transform: rotate(90deg)
+}
+.__adminnav{
+    justify-content: unset !important;
+}
+.__adminnav a{
+    line-height: 46px;
+    padding: 0 50px;
+    margin-right: 0 !important;
+}
+.__adminnav a:hover{
+    background-color: #103D5F;
+}
+#admin{
+    background: url(../img/body_bg3.jpg);
+}
+.__sidebar-admin{
+    background-color: #D1DEE4;
+    min-height: 500px;
+    margin-bottom: 0 !important;
+}
+.table-contain{
+    min-height: 500px;
+}
+.admin-table{
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border: 1px solid #000;
+    background-color: transparent;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.admin-table thead th{
+    border-bottom: 2px solid #000;
+    border-left-width: 0;
+    border-right: 1px solid #000;
+    border-bottom-width: 2px;
+    padding: 12px;
+    font-weight: 600;
+}
+.admin-table tbody td{
+    border: 1px solid #000;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    padding: 0.75rem;
+    vertical-align: top;
+}
+.__content-admin{
+    background-color: #D1DEE4;
+    padding: 10px;
+    
+}
+
+.view-detail-cus{
+    text-decoration: none;
+    font-weight: 550;
+    color: #000 !important;
+}
+.view-detail-cus:hover{
+    color: #0096d9 !important;
+}
+.select-page{
+    height: 40px;
+}
+.select-page .pre-page{
+    float: left;
+}
+.select-page .next-page{
+    float: right;
+}
+
+.select-page button:hover{
+    color: #0096d9;
+}

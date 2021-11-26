@@ -76,6 +76,22 @@ class ProductModel extends db{
         $query = $this->_query($sql);
         return mysqli_fetch_assoc($query);
     }
+    public function getAllProducts($page,$qty,&$checkNext){
+        $start = $page*$qty - $qty;
+        $sql1 = "SELECT * FROM products LIMIT $start, $qty";
+        $query1 = $this->_query($sql1);
+        $data = [];
+        $start += $qty;
+        $sql2 = "SELECT * FROM products LIMIT $start, $qty";
+        $query2 = $this->_query($sql2);
+        if(mysqli_num_rows($query2) == 0){
+            $checkNext = 0;
+        }
+        while ($row = mysqli_fetch_assoc($query1)) {
+            array_push($data, $row);
+        }
+        return $data;
+    }
 
 }
 ?>

@@ -5,14 +5,14 @@
             <li class="my-2">
                 <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse" aria-controls="contents-collapse">Product Portfolio</button>
                 <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
-                    <li><a class="d-inline-flex align-items-center rounded">Add Product</a></li>
-                    <li><a class="d-inline-flex align-items-center rounded">List Products</a></li>
+                    <li><a style="text-decoration: none;" class="d-inline-flex align-items-center rounded">Add Product</a></li>
+                    <li><a style="text-decoration: none;" class="d-inline-flex align-items-center rounded" href="./AdminController/">List Products</a></li>
                 </ul>
             </li>
             <li class="my-2">
                 <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">Order</button>
                 <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
-                    <li><a class="d-inline-flex align-items-center rounded __list_order_btn" href="./AdminController/ordersList">List Order</a></li>
+                    <li><a style="text-decoration: none;" class="d-inline-flex align-items-center rounded __list_order_btn" href="./AdminController/ordersList">List Order</a></li>
                 </ul>
             </li>
         </ul>
