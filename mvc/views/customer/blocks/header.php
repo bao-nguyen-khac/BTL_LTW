@@ -33,10 +33,8 @@
         <nav>
             <ul class="menu list-unstyled">
                 <li><a href="./HomeController/viewHome">HOME</a></li>
-                <li><a href="">Top Brand</a></li>
+                <li><a href="">Category</a></li>
                 <li><a href="./HomeController/about">About</a></li>
-                <li><a href="">Faqs</a></li>
-                <li><a href="">Delivery</a></li>
                 <li><a href="./HomeController/contact">CONTACT</a></li>
                 <li><a href="./PaymentController/checkLogin">View orders placed</a></li>
                 <div class="clear"> </div>

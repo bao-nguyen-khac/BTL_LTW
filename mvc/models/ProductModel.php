@@ -93,7 +93,7 @@ class ProductModel extends db{
         return $data;
     }
     public function updateProduct($id,$name,$price,$main_desc,$sub_desc){
-        $sql = "UPDATE products SET `name` = '$name', price = $price, sub_desc = '$main_desc', main_desc = '$sub_desc' WHERE id = $id ;";
+        $sql = "UPDATE products SET `name` = '$name', price = $price, main_desc = '$main_desc', sub_desc = '$sub_desc' WHERE id = $id ;";
         $this->_query($sql);
     }
 

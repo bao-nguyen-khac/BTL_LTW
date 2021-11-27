@@ -9,13 +9,18 @@ if (count($_POST) > 0) {
     $phone = $_POST['phone'];
 	$username = $_POST["username"];
     $password = $_POST["password"];
-    $user = new UserController;
-    if($user->addUser($fullname,$address,$phone,$username,$password)){
-        $message = "Register is susccess!";
-        $checkRegister = "susccess";
-    }else{
-        $message = "Your username is duplicate!";
+    if($fullname == "" || $address == "" || $phone == "" || $username == "" || $password == ""){
+        $message = "Data is error";
         $checkRegister = "error";
+    }else{
+        $user = new UserController;
+        if($user->addUser($fullname,$address,$phone,$username,$password)){
+            $message = "Register is susccess!";
+            $checkRegister = "susccess";
+        }else{
+            $message = "Your username is exist!";
+            $checkRegister = "error";
+        }
     }
 }
 ?>
