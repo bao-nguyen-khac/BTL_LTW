@@ -58,11 +58,12 @@ class AdminController extends controller{
             'qty' => $qty
         ]);
     }
-    public function getProductById($id){
+    public function getProductById($id,$lastpage){
         $product = $this->model("ProductModel")->getProductById($id);
         $this->view("admin/adminview",[
             'page' => 'update_product',
             'product' => $product,
+            'lastpage' => $lastpage
         ]);
     }
     public function updateProduct($id){
@@ -71,9 +72,10 @@ class AdminController extends controller{
             $price = $_POST['price'];
             $main_desc = $_POST['main_desc'];
             $sub_desc = $_POST['sub_desc'];
+            $lastpage = $_POST['lastpage'];
             $this->model("ProductModel")->updateProduct($id,$name,$price,$main_desc,$sub_desc);
         }
-        header('Location: ' . getUrl() .'/AdminController/getAllProducts');
+        header('Location: ' . getUrl() .'/AdminController/getAllProducts/'. $lastpage);
     }
 }
 ?>

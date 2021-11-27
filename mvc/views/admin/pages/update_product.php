@@ -16,12 +16,13 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Sub Desc</span>
-                    <textarea class="form-control" autocomplete="off" name="main_desc"><?= $product['main_desc'] ?></textarea>
+                    <textarea class="form-control" rows="4" autocomplete="off" name="main_desc"><?= $product['main_desc'] ?></textarea>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Main Desc</span>
                     <textarea class="form-control" autocomplete="off" name="sub_desc"><?= $product['sub_desc'] ?></textarea>
                 </div>
+                <input type="hidden" name="lastpage" value="<?= $lastpage ?>">
                 <button type="submit" class="btn btn-primary" name="submit-update">Update</button>
             </form>
         </div>

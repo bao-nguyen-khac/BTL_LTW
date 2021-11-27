@@ -55,7 +55,8 @@ if (isset($_SESSION["id_customer"])) {
             <button class="form-submit">Login</button>
             <div class="register">
                 <span>Not register?</span>
-                <span><a href="./UserController/register">Create an account</a></span>
+                <span><a href="./UserController/register">Create an account</a></span> <br><br>
+                <span><a href="./HomeController/viewHome">Go to Home</a></span>
             </div>
         </form>
     </div>

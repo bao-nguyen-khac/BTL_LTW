@@ -25,7 +25,7 @@
                 <td><?= $product['main_desc'] ?></td>
                 <td><?= $product['sub_desc']  ?></td>
                 <td>
-                    <a class="btn btn-primary" href="./AdminController/getProductById/<?= $product['id'] ?>">Edit</a>
+                    <a class="btn btn-primary" href="./AdminController/getProductById/<?= $product['id'] ?>/<?= $numpage ?>">Edit</a>
                 </td>
                 <td>
                     <a class="btn btn-danger">Delete</a>

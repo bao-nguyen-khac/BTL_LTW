@@ -5,8 +5,8 @@ class db{
     public $connect;
     protected $servername = "localhost";
     protected $username = "root";
-    protected $password = "assltw";
-    protected $dbname = "ass_ltw";
+    protected $password = "";
+    protected $dbname = "ltw_ass";
 
     function __construct(){
         $this->connect = mysqli_connect($this->servername, $this->username, $this->password);
