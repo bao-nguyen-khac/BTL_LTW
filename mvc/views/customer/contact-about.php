@@ -13,7 +13,8 @@ $home_url = getUrl() . '/';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BKU Shop</title>
-    <link href="./public/css/style.css?v=1" rel="stylesheet" type="text/css" media="all" />
+    <link href="./public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="./public/css/style2.css" rel="stylesheet" type="text/css" media="all" />
     <!-- <link href="./public/css/style2.css?v=1" rel="stylesheet" type="text/css" media="all" /> -->
     <link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>

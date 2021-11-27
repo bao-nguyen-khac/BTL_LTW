@@ -33,20 +33,7 @@
         <nav>
             <ul class="menu list-unstyled">
                 <li><a href="./HomeController/viewHome">HOME</a></li>
-                <li><a href="">Top Brand</a>
-                    <ul class="sub-menu list-unstyled sub-menu2">
-                        <div class="navg-drop-main">
-                            <div class="nav-drop nav-top-brand">
-                                <li><a href="">Iphone</a></li>
-                                <li><a href="">SamSung</a></li>
-                                <li><a href="">HP</a></li>
-                                <li><a href="">Dell</a></li>
-                                <li><a href="">MacBook</a></li>
-                                <li><a href="">Asus</a></li>
-                            </div>
-                        </div>
-                    </ul>
-                </li>
+                <li><a href="">Top Brand</a></li>
                 <li><a href="./HomeController/about">About</a></li>
                 <li><a href="">Faqs</a></li>
                 <li><a href="">Delivery</a></li>

@@ -19,8 +19,8 @@ $home_url = getUrl() . '/';
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./public/css/style.css?v=1" rel="stylesheet" type="text/css" media="all" />
-    <link href="./public/css/style2.css?v=1" rel="stylesheet" type="text/css" media="all" />
+    <link href="./public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="./public/css/style2.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
 <body>

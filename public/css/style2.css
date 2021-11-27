@@ -35,11 +35,9 @@
     margin-top: 0px;
 }
 .images_3_of_2{
-    margin-top: 10px;
     box-shadow: 0px 0px 1px rgb(150 150 150);
 }
 .images_3_of_2:hover{
-    margin-top: 0px;
     box-shadow: 0px 0px 6px rgb(150 150 150);
 }
 .list-products{
@@ -118,4 +116,7 @@
 }
 #toTop{
     background: url(../img/arrow_up.png) no-repeat right top;
+}
+.content{
+    min-height: 500px;
 }

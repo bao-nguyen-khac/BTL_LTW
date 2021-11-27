@@ -47,7 +47,7 @@ class AdminController extends controller{
         header('Location: ' . getUrl() .'/AdminController/ordersList');
     }
     public function getAllProducts($numpage = 1){
-        $qty = 8;
+        $qty = 6;
         $checkNext = 1;
         $products = $this->model("ProductModel")->getAllProducts($numpage,$qty,$checkNext);
         $this->view("admin/adminview",[

@@ -29,14 +29,15 @@ class PaymentController extends controller{
         }
     }
     public function viewStatusOldOrder($customer_id,$page = 1){
-        $qty = 7;
+        $qty = 6;
         $checkNext = 1;
         $order_detail = $this->model("OrderDetailModel")->getOrderByCusID($customer_id,$page,$qty,$checkNext);
         $this->view("customer/cart-payment",[
             "Page" => "oldorders",
             'order_detail' => $order_detail,
             "page" => $page,
-            "checkNext" => $checkNext
+            "checkNext" => $checkNext,
+            "qty" => $qty
         ]);
     }
 }

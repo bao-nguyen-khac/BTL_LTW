@@ -21,7 +21,7 @@
                     <th>Status</th>
                 </tr>
             </thead>
-            <?php $count = 1;
+            <?php $count = $page*$qty - $qty + 1;
             foreach ($order_detail as $order) :
                 $status = '';
                 if ($order['status'] == 0) {

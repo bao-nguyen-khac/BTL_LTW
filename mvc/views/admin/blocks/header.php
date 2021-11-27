@@ -15,8 +15,8 @@
   <div class="container-fluid __adminnav">
     <a class="navbar-brand none" href="#"></a>
     <a class="navbar-brand" href="./AdminController/viewHome">Dashboard</a>
-    <a class="navbar-brand" href="#">User Profie</a>
-    <a class="navbar-brand" href="#">Change Pasword</a>
+    <a class="navbar-brand" href="./AdminController/viewHome">User Profie</a>
+    <a class="navbar-brand" href="./AdminController/viewHome">Change Pasword</a>
     <a class="navbar-brand" href="./">Visit Website</a>
   </div>
 </nav>
