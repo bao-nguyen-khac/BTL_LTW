@@ -4,8 +4,18 @@
         max-width: 100% !important;
     }
 }
+.row{
+    --bs-gutter-x: 1rem !important;
+}
 .__header-admin{
     background-color: #204562 !important;
+}
+.logout{
+    margin-left: 5px;
+    color: #0096d9;
+}
+.logout:hover{
+    color: #0096d9;
 }
 .__nav-admin{
     background-color: #315c7c !important;
@@ -34,11 +44,12 @@
     background-color: #103D5F;
 }
 #admin{
-    background: url(../img/body_bg3.jpg);
+    /* background: url(../img/body_bg3.jpg); */
+    background-color: #315c7c;
 }
 .__sidebar-admin{
     background-color: #D1DEE4;
-    min-height: 500px;
+    min-height: 600px;
     margin-bottom: 0 !important;
 }
 .table-contain{
@@ -71,7 +82,7 @@
 .__content-admin{
     background-color: #D1DEE4;
     padding: 10px;
-    
+    min-height: 600px;
 }
 
 .view-detail-cus{
@@ -94,4 +105,13 @@
 
 .select-page button:hover{
     color: #0096d9;
+}
+.select-page a{
+    text-decoration: none;
+}
+.footer p{
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    background-color: #204562;
 }

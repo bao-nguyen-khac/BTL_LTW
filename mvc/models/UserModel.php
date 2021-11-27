@@ -16,5 +16,15 @@ class UserModel extends db{
         $row  = mysqli_fetch_array($query);
         return $row;
     }
+    public function addUser($fullname,$address,$phone,$username,$password){
+        $checksql = "SELECT id FROM customer WHERE username = '$username'";
+        $query = $this->_query($checksql);
+        if(mysqli_num_rows($query) > 0){
+            return 0;
+        }
+        $sql = "INSERT INTO customer(username,`password`,`address`,fullname,phone_number) VALUES ('$username',MD5('$password'),'$address','$fullname','$phone');";
+        $this->_query($sql);
+        return 1;
+    }
 }
 ?>

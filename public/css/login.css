@@ -9,7 +9,7 @@ font-size: 70%;
 font-family: "Open Sans", sans-serif;
 }
 .main {
-background: #f1f1f1;
+background: #69676767;
 min-height: 100vh;
 display: flex;
 justify-content: center;
@@ -78,12 +78,18 @@ color: #f33a58;
 }
 
 .form-message {
-    color: #f33a58;
 font-size: 1.2rem;
 line-height: 1.6rem;
 padding: 4px 0 0;
 }
-
+.form-message.error{
+    font-size: 1.4rem;
+    color: #f33a58;
+}
+.form-message.susccess{
+    color: #1dbfaf;
+    font-size: 1.4rem;
+}
 .form-submit {
 outline: none;
 background-color: #1dbfaf;
@@ -104,4 +110,14 @@ background-color: #1ac7b6;
 
 .spacer {
 margin-top: 36px;
+}
+.register{
+    margin-top: 10px;
+}
+.register span{
+    font-size: 1.4rem;
+}
+.register span a{
+    text-decoration: none;
+    color: #0096d9;
 }

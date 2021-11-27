@@ -15,5 +15,8 @@ class UserController extends controller{
     public function register(){
         $this->view("customer/userregister");
     }
+    public function addUser($fullname,$address,$phone,$username,$password){
+        return $this->model("UserModel")->addUser($fullname,$address,$phone,$username,$password);
+    }
 }
 ?>

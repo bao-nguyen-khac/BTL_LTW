@@ -6,7 +6,7 @@
                 <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse" aria-controls="contents-collapse">Product Portfolio</button>
                 <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
                     <li><a style="text-decoration: none;" class="d-inline-flex align-items-center rounded">Add Product</a></li>
-                    <li><a style="text-decoration: none;" class="d-inline-flex align-items-center rounded" href="./AdminController/">List Products</a></li>
+                    <li><a style="text-decoration: none;" class="d-inline-flex align-items-center rounded" href="./AdminController/getAllProducts">List Products</a></li>
                 </ul>
             </li>
             <li class="my-2">

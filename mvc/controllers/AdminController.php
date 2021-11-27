@@ -8,10 +8,10 @@ class AdminController extends controller{
         ]);
     }
     public function login(){
-        $this->view("adminlogin");
+        $this->view("admin/adminlogin");
     }
     public function logout(){
-        $this->view("adminlogout");
+        $this->view("admin/adminlogout");
     }
     public function checklogin($username, $password){
         return $this->model("AdminModel")->CheckLogin($username, $password);
@@ -22,7 +22,7 @@ class AdminController extends controller{
         ]);
     }
     public function ordersListAjax($page = 1){
-        $qty = 2;
+        $qty = 5;
         $checkNext = 1;
         $order_detail = $this->model("OrderDetailModel")->getAllOrder($page,$qty,$checkNext);
         $this->view("admin/pages/list_order_ajax",[
@@ -46,8 +46,34 @@ class AdminController extends controller{
         $this->model("OrderDetailModel")->hideOrder($order_id);
         header('Location: ' . getUrl() .'/AdminController/ordersList');
     }
-    // public function getAllProducts(){
-
-    // }
+    public function getAllProducts($numpage = 1){
+        $qty = 8;
+        $checkNext = 1;
+        $products = $this->model("ProductModel")->getAllProducts($numpage,$qty,$checkNext);
+        $this->view("admin/adminview",[
+            'page' => 'list_products',
+            'products' => $products,
+            "checkNext" => $checkNext,
+            'numpage' => $numpage,
+            'qty' => $qty
+        ]);
+    }
+    public function getProductById($id){
+        $product = $this->model("ProductModel")->getProductById($id);
+        $this->view("admin/adminview",[
+            'page' => 'update_product',
+            'product' => $product,
+        ]);
+    }
+    public function updateProduct($id){
+        if(isset($_POST['submit-update'])){
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+            $main_desc = $_POST['main_desc'];
+            $sub_desc = $_POST['sub_desc'];
+            $this->model("ProductModel")->updateProduct($id,$name,$price,$main_desc,$sub_desc);
+        }
+        header('Location: ' . getUrl() .'/AdminController/getAllProducts');
+    }
 }
 ?>

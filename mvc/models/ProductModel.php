@@ -82,7 +82,7 @@ class ProductModel extends db{
         $query1 = $this->_query($sql1);
         $data = [];
         $start += $qty;
-        $sql2 = "SELECT * FROM products LIMIT $start, $qty";
+        $sql2 = "SELECT * FROM products LIMIT $start, 1";
         $query2 = $this->_query($sql2);
         if(mysqli_num_rows($query2) == 0){
             $checkNext = 0;
@@ -91,6 +91,10 @@ class ProductModel extends db{
             array_push($data, $row);
         }
         return $data;
+    }
+    public function updateProduct($id,$name,$price,$main_desc,$sub_desc){
+        $sql = "UPDATE products SET `name` = '$name', price = $price, sub_desc = '$main_desc', main_desc = '$sub_desc' WHERE id = $id ;";
+        $this->_query($sql);
     }
 
 }
