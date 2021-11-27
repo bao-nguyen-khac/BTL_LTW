@@ -5,7 +5,7 @@ class db{
     public $connect;
     protected $servername = "localhost";
     protected $username = "root";
-    protected $password = "";
+    protected $password = "assltw";
     protected $dbname = "ass_ltw";
 
     function __construct(){
