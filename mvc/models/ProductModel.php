@@ -96,6 +96,9 @@ class ProductModel extends db{
         $sql = "UPDATE products SET `name` = '$name', price = $price, main_desc = '$main_desc', sub_desc = '$sub_desc' WHERE id = $id ;";
         $this->_query($sql);
     }
-
+    public function deleteProduct($id){
+        $sql = "DELETE FROM products WHERE id = $id";
+        $this->_query($sql);
+    }
 }
 ?>

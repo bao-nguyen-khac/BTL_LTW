@@ -1,6 +1,5 @@
-// var myModal = document.getElementById('myModal')
-// var myInput = document.getElementById('myInput')
-
-// myModal.addEventListener('shown.bs.modal', function () {
-//   myInput.focus()
-// })
+$(document).on('click','.btn-del-product',function(){
+    var id = $(this).data('id-product')
+    a = document.querySelector('.admin-delete-product');
+    a.href = "./AdminController/deleteProduct/" + id
+})

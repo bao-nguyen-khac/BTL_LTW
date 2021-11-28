@@ -95,9 +95,9 @@ if (count($_POST) > 0) {
                 Validator.isRequired('#address'),
                 Validator.isRequired('#phone'),
                 Validator.isRequired('#username'),
-                Validator.minLength('#username', 2),
+                Validator.minLength('#username', 4),
                 Validator.isRequired('#password'),
-                Validator.minLength('#password', 2),
+                Validator.minLength('#password', 4),
                 Validator.isRequired('#password_confirmation'),
                 Validator.isConfirmed('#password_confirmation', function() {
                     return document.querySelector('#form-1 #password').value;

@@ -36,6 +36,7 @@ if (isset($_SESSION["id_admin"])) {
     <div class="main">
         <form action="" method="POST" class="form" id="form-1">
             <h3 class="heading">Admin Login</h3>
+            <p class="desc">Wellcome to BKU Shop ❤️</p>
             <div class="spacer"></div>
             <div class="form-group">
                 <label for="username" class="form-label">Username</label>

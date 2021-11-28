@@ -77,5 +77,9 @@ class AdminController extends controller{
         }
         header('Location: ' . getUrl() .'/AdminController/getAllProducts/'. $lastpage);
     }
+    public function deleteProduct($id){
+        $this->model("ProductModel")->deleteProduct($id);
+        header('Location: ' . getUrl() .'/AdminController/getAllProducts');
+    }
 }
 ?>

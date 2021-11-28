@@ -22,7 +22,7 @@
                 <span><a href="./UserController/login"><img src="./public/img/login.png" alt="" title="login" /></a></span>
             </div>
             <?php else: ?>
-            <div class="name-user">Hello Bao!</div>
+            <div class="name-user">Hi <?= $_SESSION['name_customer'] ?>!</div>
             <div class="logout"><a href="./UserController/logout">Logout</a></div>
             <?php endif;?>
             <div class="clear"></div>

@@ -1,7 +1,6 @@
 $(document).ready(function () {
     var page = 1
     function fetchData() {
-        console.log(page)
         $.ajax({
             url: "./AdminController/ordersListAjax/" + page,
             success: function (data) {
