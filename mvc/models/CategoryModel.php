@@ -5,7 +5,7 @@ class CategoryModel extends db{
         return mysqli_query($this->connect, $sql);
     }
     public function ShowAllCategories(){
-        $sql = "SELECT * FROM categories";
+        $sql = "SELECT * FROM theloai";
         $query = $this->_query($sql);
         // var_dump($query);
         $data = [];

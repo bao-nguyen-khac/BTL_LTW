@@ -9,7 +9,7 @@ if (count($_POST) > 0) {
     $row = $user->checklogin($username,$password);
     if(is_array($row)){
         $_SESSION["id_customer"] = $row['id'];
-        $_SESSION["name_customer"] = $row['fullname'];
+        $_SESSION["name_customer"] = $row['ten'];
     }else{
         $message = "Invalid Username or Password!";
     }

@@ -17,27 +17,27 @@
     $count = 1;
     foreach ($order_detail as $order) {
         $status = '';
-        if($order['status'] == 0){
+        if($order['trangthai'] == 0){
             $status = 'Pending';
-        }else if($order['status'] == 1){
+        }else if($order['trangthai'] == 1){
             $status = 'Shiping...';
         }else{
             $status = 'Done';
         }
         $output .= '
             <tr>
-                <td> '.$order['order_id'].' </td>
-                <td> '.$order['date_order'].' </td>
+                <td> '.$order['donhang_id'].' </td>
+                <td> '.$order['ngay_dat'].' </td>
                 <td>';
         foreach ($order['products'] as $product) {
-            $output .= $product['product_name'] .' x '.$product['qty'].'<br>';
+            $output .= $product['tensanpham'] .' x '.$product['soluong'].'<br>';
         }
         $output .= '</td>
-                <td> '.number_format($order['totalprice']) .'đ</td>
+                <td> '.number_format($order['gia']) .'đ</td>
                 
-                <td><a class="view-detail-cus" href="./AdminController/viewCustomer/'.$order['customer_id'] .'">Details</a></td>
-                <td><button type="button" class="btn btn-primary __btn-status" data-order_id="'.$order['order_id'].'" data-status="'.$order['status'].'" data-bs-toggle="modal" data-bs-target="#modalAction">'.$status.'</button></td>
-                <td><button type="button" class="btn-close __btn-hide"  data-order_id="'.$order['order_id'].'" data-status="'.$order['status'].'" data-bs-toggle="modal" data-bs-target="#modalHide"></button></td>
+                <td><a class="view-detail-cus" href="./AdminController/viewCustomer/'.$order['nguoidung_id'] .'">Details</a></td>
+                <td><button type="button" class="btn btn-primary __btn-status" data-order_id="'.$order['donhang_id'].'" data-status="'.$order['status'].'" data-bs-toggle="modal" data-bs-target="#modalAction">'.$status.'</button></td>
+                <td><button type="button" class="btn-close __btn-hide"  data-order_id="'.$order['donhang_id'].'" data-status="'.$order['trangthai'].'" data-bs-toggle="modal" data-bs-target="#modalHide"></button></td>
             </tr>';
         $count++;
     }

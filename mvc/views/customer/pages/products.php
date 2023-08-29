@@ -18,9 +18,9 @@
             <div class="section group">
             <?php endif; ?>
             <div class="grid_1_of_4 images_1_of_4">
-                <a href="./HomeController/viewDetailProductById/<?= $product['id'] ?>"><img class="__img_prod" src="./public/img/<?= $product['image'] ?>" alt="" /></a>
-                <h2 class="__title_prod"><?= $product['name'] ?></h2>
-                <p><span class="price"><?= number_format($product['price'])  ?>đ</span></p>
+                <a href="./HomeController/viewDetailProductById/<?= $product['id'] ?>"><img class="__img_prod" src="./public/img/<?= $product['anh'] ?>" alt="" /></a>
+                <h2 class="__title_prod"><?= $product['ten'] ?></h2>
+                <p><span class="price"><?= number_format($product['gia'])  ?>đ</span></p>
                 <div class="button"><span><img src="./public/img/cart.jpg" alt="" /><a href="./CartController/addToCart/<?= $product['id'] ?>" class="cart-button">Add to Cart</a></span> </div>
             </div>
             <?php if ($count == $temp + 3) : ?>
@@ -47,9 +47,9 @@
             <div class="section group">
             <?php endif; ?>
             <div class="grid_1_of_4 images_1_of_4">
-                <a href="./HomeController/viewDetailProductById/<?= $product['id'] ?>"><img class="__img_prod" src="./public/img/<?= $product['image'] ?>" alt="" /></a>
-                <h2 class="__title_prod"><?= $product['name'] ?></h2>
-                <p><span class="price"><?= number_format($product['price']) ?>đ</span></p>
+                <a href="./HomeController/viewDetailProductById/<?= $product['id'] ?>"><img class="__img_prod" src="./public/img/<?= $product['anh'] ?>" alt="" /></a>
+                <h2 class="__title_prod"><?= $product['ten'] ?></h2>
+                <p><span class="price"><?= number_format($product['gia']) ?>đ</span></p>
                 <div class="button"><span><img src="./public/img/cart.jpg" alt="" /><a href="./CartController/addToCart/<?= $product['id'] ?>" class="cart-button">Add to Cart</a></span> </div>
             </div>
             <?php if ($count == $temp + 3) : ?>

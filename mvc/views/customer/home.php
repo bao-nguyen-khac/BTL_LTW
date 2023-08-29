@@ -28,11 +28,11 @@ $home_url = getUrl() . '/';
             <div class="content">
                 <?php if($data['Page'] == 'detailproduct'){
                     foreach ($categories as $category) {
-                        if ($category['id'] == $product['category_id']) {
+                        if ($category['id'] == $product['theloai_id']) {
                             echo '
                                 <div class="content_top">
                                     <div class="back-links">
-                                        <p><a href="./HomeController/ViewHome">Home</a> >> <a href="./HomeController/viewCategory/'. $category['id'] .'">'. $category['name'] .'</a></p>
+                                        <p><a href="./HomeController/ViewHome">Home</a> >> <a href="./HomeController/viewCategory/'. $category['id'] .'">'. $category['ten'] .'</a></p>
                                     </div>
 
                                     <div class="clear"></div>

@@ -10,8 +10,8 @@
     </thead>
     <tr>
         <td><?= $customer_detail['id']; ?></a></td>
-        <td><?= $customer_detail['fullname']; ?></td>
-        <td><?= $customer_detail['phone_number']; ?></td>
-        <td><?= $customer_detail['address']; ?></a></td>
+        <td><?= $customer_detail['ten']; ?></td>
+        <td><?= $customer_detail['sodienthoai']; ?></td>
+        <td><?= $customer_detail['diachi']; ?></a></td>
     </tr>
 </table>

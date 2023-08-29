@@ -3,10 +3,10 @@
 class db{
 
     public $connect;
-    protected $servername = "localhost";
+    protected $servername = "mysql";
     protected $username = "root";
-    protected $password = "";
-    protected $dbname = "ltw_ass";
+    protected $password = "root";
+    protected $dbname = "banhang";
 
     function __construct(){
         $this->connect = mysqli_connect($this->servername, $this->username, $this->password);

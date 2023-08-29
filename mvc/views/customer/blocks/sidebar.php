@@ -4,7 +4,7 @@
         <?php
         foreach ($categories as $category) :
         ?>
-            <li><a href="./HomeController/viewCategory/<?= $category['id']; ?>"><?= $category['name']; ?></a></li>
+            <li><a href="./HomeController/viewCategory/<?= $category['id']; ?>"><?= $category['ten']; ?></a></li>
         <?php endforeach;
         ?>
     </ul>

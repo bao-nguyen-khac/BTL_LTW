@@ -24,9 +24,9 @@
             <?php $count = $page*$qty - $qty + 1;
             foreach ($order_detail as $order) :
                 $status = '';
-                if ($order['status'] == 0) {
+                if ($order['trangthai'] == 0) {
                     $status = 'Pending';
-                } else if ($order['status'] == 1) {
+                } else if ($order['trangthai'] == 1) {
                     $status = 'Shipping...';
                 } else {
                     $status = 'Done';
@@ -34,14 +34,14 @@
             ?>
                 <tr>
                     <td><?= $count ?></td>
-                    <td><?= $order['date_order']; ?></td>
+                    <td><?= $order['ngay_dat']; ?></td>
                     <td><?php
                         foreach ($order['products'] as $product) {
-                            echo $product['product_name'] . ' x ' . $product['qty'];
+                            echo $product['tensanpham'] . ' x ' . $product['soluong'];
                             echo '<br>';
                         }
                         ?></td>
-                    <td><?= number_format($order['totalprice']) ?>đ</td>
+                    <td><?= number_format($order['gia']) ?>đ</td>
                     <td><?= $status; ?></a></td>
                 </tr>
             <?php $count++;

@@ -21,23 +21,23 @@
             if (!is_array($product)) {
                 continue;
             }
-            $sum += $product['price'] * $product['qty'];
+            $sum += $product['gia'] * $product['qty'];
         ?>
             <tbody>
                 <tr>
                     <td data-th="Product">
                         <div class="row">
-                            <div class="col-sm-2 hidden-xs"><img src="./public/img/<?= $product['image'] ?>" alt="..." class="img-responsive" /></div>
+                            <div class="col-sm-2 hidden-xs"><img src="./public/img/<?= $product['anh'] ?>" alt="..." class="img-responsive" /></div>
                             <div class="col-sm-10">
-                                <h4 class="nomargin"><?= $product['name']; ?></h4>
+                                <h4 class="nomargin"><?= $product['ten']; ?></h4>
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price"><?= number_format($product['price']); ?>đ</td>
+                    <td data-th="Price"><?= number_format($product['gia']); ?>đ</td>
                     <td data-th="Quantity">
                         <input type="number" class="form-control text-center cart-qty" data-prodid="<?= $product['id'] ?>" value="<?= $product['qty']; ?>" min="1">
                     </td>
-                    <td data-th="Subtotal" class="text-center SubtotalCart" data-subtotal="<?= $product['id'] ?>"><?= number_format($product['price'] * $product['qty']); ?>đ</td>
+                    <td data-th="Subtotal" class="text-center SubtotalCart" data-subtotal="<?= $product['id'] ?>"><?= number_format($product['gia'] * $product['qty']); ?>đ</td>
                     <td class="actions" data-th="">
                         <a href="./CartController/viewHome"><button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></a>
                         <a href="./CartController/deleteInCart/<?= $product['id'] ?>"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>

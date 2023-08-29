@@ -1,12 +1,12 @@
 <div class="cont-desc span_1_of_2">
     <div class="grid images_3_of_2">
-        <img src="./public/img/<?= $product['image'] ?>" alt="" />
+        <img src="./public/img/<?= $product['anh'] ?>" alt="" />
     </div>
     <div class="desc span_3_of_2">
-        <h2><?= $product['name']; ?></h2>
-        <p><?= $product['main_desc'] ?></p>
+        <h2><?= $product['ten']; ?></h2>
+        <p><?= $product['mota_chinh'] ?></p>
         <div class="price">
-            <p>Price: <span><?= number_format($product['price']); ?>đ</span></p>
+            <p>Price: <span><?= number_format($product['gia']); ?>đ</span></p>
         </div>
         <div class="share">
             <p>Share Product :</p>
@@ -27,7 +27,7 @@
     </div>
     <div class="product-desc">
         <h2>Product Details</h2>
-        <?php foreach(explode("/",$product['sub_desc']) as $each): ?>
+        <?php foreach(explode("/",$product['mota_phu']) as $each): ?>
             <p><?=$each ?></p>
         <?php endforeach;?>
     </div>

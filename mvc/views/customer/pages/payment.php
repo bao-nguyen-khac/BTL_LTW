@@ -26,23 +26,23 @@
             if (!is_array($product)) {
                 continue;
             }
-            $sum += $product['price'] * $product['qty'];
+            $sum += $product['gia'] * $product['qty'];
         ?>
             <tbody>
                 <tr>
                     <td data-th="Product">
                         <div class="row">
-                            <div class="col-sm-2 hidden-xs"><img src="./public/img/<?= $product['image'] ?>" alt="..." class="img-responsive" /></div>
+                            <div class="col-sm-2 hidden-xs"><img src="./public/img/<?= $product['anh'] ?>" alt="..." class="img-responsive" /></div>
                             <div class="col-sm-10">
-                                <h4 class="nomargin"><?= $product['name']; ?></h4>
+                                <h4 class="nomargin"><?= $product['ten']; ?></h4>
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price"><?= number_format($product['price']); ?>đ</td>
+                    <td data-th="Price"><?= number_format($product['gia']); ?>đ</td>
                     <td data-th="Quantity">
                         x <?= $product['qty']; ?>
                     </td>
-                    <td data-th="Subtotal" class="text-center SubtotalCart" data-subtotal="<?= $product['id'] ?>"><?= number_format($product['price'] * $product['qty']); ?>đ</td>
+                    <td data-th="Subtotal" class="text-center SubtotalCart" data-subtotal="<?= $product['id'] ?>"><?= number_format($product['gia'] * $product['qty']); ?>đ</td>
                 </tr>
             </tbody>
         <?php

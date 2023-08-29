@@ -20,12 +20,12 @@
         foreach ($products as $product) : ?>
             <tr>
                 <td><?= $count ?></td>
-                <td><img height="100" width="100" src="./public/img/<?= $product['image'] ?>" alt=""></td>
-                <td><?= $product['name'] ?></td>
-                <td><?= number_format($product['price']) ?>đ</td>
-                <td><?= $product['category_id'] ?></td>
-                <td><?= $product['main_desc'] ?></td>
-                <td><?= $product['sub_desc']  ?></td>
+                <td><img height="100" width="100" src="./public/img/<?= $product['anh'] ?>" alt=""></td>
+                <td><?= $product['ten'] ?></td>
+                <td><?= number_format($product['gia']) ?>đ</td>
+                <td><?= $product['theloai_id'] ?></td>
+                <td><?= $product['mota_chinh'] ?></td>
+                <td><?= $product['mota_phu']  ?></td>
                 <td>
                     <a class="btn btn-primary" href="./AdminController/getProductById/<?= $product['id'] ?>/<?= $numpage ?>">Edit</a>
                 </td>
