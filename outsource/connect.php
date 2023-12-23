@@ -6,10 +6,10 @@
     <?php echo '<p>Hello World</p>';
 
     // In the variables section below, replace user and password with your own $
-    $servername = "192.168.81.194";
-    $my_db      = "b1706_database";
-    $username   = "remote_et01";
-    $password   = "Cloud@2023";
+    $servername = "192.168.81.37";
+    $my_db      = "bn21v7x042_database";
+    $username   = "bn21v7x042";
+    $password   = "Cloud_2023";
 
     // Create MySQL connection
     $conn = mysqli_connect($servername, $username, $password);
