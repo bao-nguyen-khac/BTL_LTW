@@ -3,7 +3,6 @@
 <html>
 <head>
 <style>
-   <h1> Tham tai khoan </h1>
 </style>
 </head>
 <body>
@@ -20,13 +19,13 @@ error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED);
  $username=$_POST['username'];
  $password=$_POST['password'];
 
- $servername = "192.168.81.194";
- $database = "b1706_database";
- $user = "remote_et01";
- $pass = "Cloud@2023";
+ $servername = "192.168.81.37";
+ $database = "bn21v7x042_database";
+ $user = "bn21v7x042";
+ $pass = "Cloud_2023";
 
  $conn = mysqli_connect($servername, $user, $pass,$database);
-$sql="INSERT INTO taikhoan (username, password) VALUES ('$username','$password')";
+$sql="INSERT INTO account (username, password) VALUES ('$username','$password')";
  if(!$conn){
     echo "Error : Unable to open database\n";
    } else {
