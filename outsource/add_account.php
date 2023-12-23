@@ -20,11 +20,11 @@ error_reporting (E_ALL ^ E_NOTICE ^ E_DEPRECATED);
  $password=$_POST['password'];
 
  $servername = "192.168.81.37";
- $database = "bn21v7x042_database";
- $user = "bn21v7x042";
- $pass = "Cloud_2023";
+ $my_db      = "bn21v7x042_database";
+ $username   = "bn21v7x042";
+ $password   = "Cloud_2023";
 
- $conn = mysqli_connect($servername, $user, $pass,$database);
+ $conn = mysqli_connect($servername, $username, $password, $my_db);
 $sql="INSERT INTO account (username, password) VALUES ('$username','$password')";
  if(!$conn){
     echo "Error : Unable to open database\n";

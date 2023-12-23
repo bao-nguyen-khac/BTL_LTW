@@ -18,7 +18,7 @@
   $username   = "bn21v7x042";
   $password   = "Cloud_2023";
 
-  $conn = mysqli_connect($servername, $user, $pass, $database);
+  $conn = mysqli_connect($servername, $username, $password, $my_db);
   if (!$conn) {
     echo "Error : Unable to open database\n";
   } else {

@@ -16,7 +16,7 @@
     // Create MySQL connection
     // $conn = mysqli_connect($servername, $username, $password);
 
-    $conn = mysqli_connect('192.168.81.194', $username, $password, $my_db);
+    $conn = mysqli_connect($servername, $username, $password, $my_db);
 
     // Check connection - if it fails, output will include the error message
     if (!$conn) {
